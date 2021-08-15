@@ -7,7 +7,7 @@ import User from '../models/user.model';
  * Get all users
  * @method GET 
  */
-export const getUsers = async (req: Request, res: Response, next: NextFunction) => {
+const getUsers = async (req: Request, res: Response, next: NextFunction) => {
    try {
       const users = await User.find().exec();
 
@@ -23,7 +23,7 @@ export const getUsers = async (req: Request, res: Response, next: NextFunction) 
  * @param id
  * @method GET 
  */
-export const getUser = async (req: Request, res: Response, next: NextFunction) => {
+const getUser = async (req: Request, res: Response, next: NextFunction) => {
 
    const { id } = req.params;
 
@@ -42,7 +42,7 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
  * Create a new user
  * @method POST
  */
-export const createUser = async (req: Request, res: Response, next: NextFunction) => {
+const createUser = async (req: Request, res: Response, next: NextFunction) => {
 
    const { first_name, last_name, email, password, confirm_password, profile_image, role } = req.body;
 
@@ -84,7 +84,7 @@ export const createUser = async (req: Request, res: Response, next: NextFunction
  * @param id
  * @method DELETE
  */
-export const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
+const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
 
    try {
       const { id } = req.params;
@@ -97,3 +97,5 @@ export const deleteUser = async (req: Request, res: Response, next: NextFunction
       next(error)
    }
 }
+
+export = { getUsers, getUser, createUser, deleteUser };
