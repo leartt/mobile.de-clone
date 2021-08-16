@@ -1,10 +1,14 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
+import passport from "passport";
+import configPassport from './config/passport';
 import connectDB from "./db/MongoDB";
 
 import apiRoutes from './routes/api';
 
 dotenv.config();
+
+console.log(process.env.JWT_TOKEN_SECRET)
 
 
 // app initialization
@@ -12,6 +16,9 @@ const app: Application = express();
 
 // middlewares
 app.use(express.json());
+
+app.use(passport.initialize());
+configPassport(passport);
 
 
 // API Routes
