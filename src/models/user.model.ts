@@ -1,5 +1,6 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document, HookNextFunction } from 'mongoose';
 import validator from 'validator'
+import bcrypt from 'bcryptjs';
 
 interface User {
    first_name: string,
@@ -41,6 +42,20 @@ const UserSchema = new Schema<User>({
       uppercase: true,
    },
 }, { timestamps: true })
+
+UserSchema.pre('save', async function (next: HookNextFunction) {
+
+   const user: User = this;
+
+   const salt: string = await bcrypt.genSalt(10);
+
+   const hashedPassword = await bcrypt.hash(this.password, salt);
+
+   user.password = hashedPassword;
+
+   next();
+
+})
 
 const UserModel = mongoose.model<User>('User', UserSchema);
 
