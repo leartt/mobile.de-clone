@@ -61,39 +61,6 @@ const createListing = async (req: Request, res: Response, next: NextFunction) =>
       extra_info: string
    } = req.body;
 
-   // const {
-   //    car_model,
-   //    first_registration: {
-   //       year,
-   //       month,
-   //    },
-   //    title,
-   //    price,
-   //    mileage,
-   //    color,
-   //    doors,
-   //    category,
-   //    fuel,
-   //    engine,
-   //    tranmission,
-   //    performance: {
-   //       ps,
-   //       kw
-   //    },
-   //    consumption: {
-   //       combined,
-   //       urban,
-   //       extra_urban,
-   //    },
-   //    emission_class,
-   //    damaged,
-   //    roadworthy,
-   //    address: {
-   //       postal_code,
-   //       country,
-   //    },
-   //    extra_info
-   // } = req.body;
 
    try {
 

@@ -30,7 +30,8 @@ const UserSchema = new Schema<User>({
    password: {
       type: String,
       required: ['Please enter a password'],
-      minlength: [6, 'Password should be at least 6 characters long']
+      minlength: [6, 'Password should be at least 6 characters long'],
+      select: false
    },
    profile_image: {
       type: String,
@@ -40,7 +41,7 @@ const UserSchema = new Schema<User>({
       enum: ['ADMINISTRATOR', 'MEMBER'],
       default: "MEMBER",
       uppercase: true,
-   },
+   }
 }, { timestamps: true })
 
 UserSchema.pre('save', async function (next: HookNextFunction) {
