@@ -1,0 +1,36 @@
+.ListingItem {
+   display: flex;
+   padding: 15px;
+
+   border-bottom: 2px solid rgb(216, 216, 216);
+   text-decoration: none;
+   color: black;
+
+   &:hover {
+      color: rgb(51, 51, 51);
+   }
+
+   &__imgArea {
+
+      img {
+         width: 200px;
+      }
+   }
+
+   &__descriptionArea {
+      padding: 0 25px;
+
+      h4 {
+         font-size: 1.4em;
+         font-weight: bolder;
+         padding-bottom: 5px;
+      }
+   }
+
+   &__financeArea {
+      font-weight: bold;
+      margin-left: auto;
+      font-size: 1.1em;
+   }
+
+}

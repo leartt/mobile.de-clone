@@ -1,0 +1,150 @@
+@mixin boxStyles {
+   border-radius: 10px;
+   background: #fff;
+   // padding: 15px;
+   padding: 15px;
+   margin: 10px 0;
+   box-shadow: 0 1px 1.5px 0 rgb(0, 0, 0 / 50%);
+}
+
+@mixin backLinkStyles {
+   display: block;
+   cursor: pointer;
+   text-decoration: underline;
+   color: gray;
+   font-size: 0.95em;
+   margin-bottom: 30px;
+
+   &:hover,
+   &:focus,
+   &:active {
+      color: black;
+   }
+}
+
+.Listing {
+
+   background: #ededed;
+   padding: 50px 0;
+
+   .backLink {
+      @include backLinkStyles;
+   }
+
+   &Wrapper {
+      display: flex;
+      justify-content: stretch;
+
+
+      .ListingItems {
+         background: white;
+         flex: 8;
+         padding: 10px 0;
+         margin-left: 2em;
+         border-radius: 10px;
+         box-shadow: 0 1px 1.5px 0 rgb(0, 0, 0 / 50%);
+      }
+   }
+
+}
+
+.SingleListing {
+   background: #ededed;
+   padding: 50px 0;
+
+   .backLink {
+      @include backLinkStyles;
+   }
+
+   .gallery {
+      @include boxStyles;
+
+      &__head {
+         display: flex;
+         justify-content: space-between;
+         padding-bottom: 15px;
+
+         .title {
+            font-size: 1.5em;
+            font-weight: bolder;
+         }
+
+         .price {
+            font-weight: bolder;
+            font-size: 1.2em;
+         }
+      }
+
+      &__slider {
+         display: flex;
+         justify-content: space-between;
+
+         .leftSlides {
+            max-width: 100px;
+            width: 100%;
+            margin-right: 20px;
+
+            img {
+               max-width: 100px;
+               width: 100%;
+               height: 100px;
+               object-fit: cover;
+               border: 2px solid rgb(196, 196, 196);
+               padding: 5px;
+               margin-top: 10px;
+               cursor: pointer;
+            }
+         }
+
+         .mainSlide {
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+      }
+   }
+
+   .contact__info {
+      @include boxStyles;
+
+      .person {
+         font-size: 1.3em;
+         font-weight: bold;
+      }
+
+      .location {
+         padding: 5px 0;
+         display: flex;
+         text-decoration: underline;
+      }
+
+      .phone {
+         font-size: 1.2em;
+         font-weight: bolder;
+         word-break: break-word;
+      }
+
+      .buttons {
+         display: flex;
+         flex-direction: column;
+         flex: 1;
+
+         .email {
+            padding: 10px;
+            margin: 10px 0;
+            background: #ff6600;
+            color: white;
+            font-weight: bold;
+         }
+
+         .parking {
+            padding: 10px;
+            margin: 5px 0;
+            color: black;
+            font-weight: bold;
+         }
+      }
+   }
+}

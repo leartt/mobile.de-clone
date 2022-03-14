@@ -1,0 +1,58 @@
+.Login,
+.Signup {
+   background: #ededed;
+   padding: 100px 0;
+
+   // .container {
+   //    background: white;
+   //    box-shadow: 0 1px 1.5px 0 rgb(0, 0, 0 / 50%);
+   //    padding: 100px;
+   // }
+
+   &__form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      width: 100%;
+      background: white;
+      box-shadow: 0 1px 1.5px 0 rgb(0, 0, 0 / 50%);
+      padding: 30px;
+      justify-content: center;
+      flex: 1;
+
+      .title {
+         padding-bottom: 30px;
+      }
+
+      .inputControl {
+         display: flex;
+         flex-direction: column;
+         margin-bottom: 20px;
+
+         input {
+            border-radius: 5px;
+            padding: 10px;
+            flex: 1;
+         }
+
+         .validationError {
+            color: red;
+         }
+      }
+
+      button[type="submit"] {
+         flex: 1;
+         padding: 10px 50px;
+         background: #f60;
+         color: white;
+         font-weight: bold;
+         border: none;
+         outline: none;
+         border-radius: 5px;
+      }
+
+      >small {
+         padding-top: 30px;
+      }
+   }
+}

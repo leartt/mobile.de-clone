@@ -1,0 +1,51 @@
+.CreateListing {
+   background: #ededed;
+   padding: 50px 0;
+
+   &__form {
+      padding: 20px 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 1px 1.5px 0 rgb(0, 0, 0 / 50%);
+
+      input,
+      select {
+         width: 100%;
+         padding: 15px 8px;
+         margin-bottom: 20px;
+      }
+
+      label {
+         font-weight: bold;
+         font-size: 1.1em;
+         padding: 5px 0;
+      }
+
+      .radioController {
+         display: flex;
+         align-items: center;
+         margin-bottom: 15px;
+
+         >input {
+            margin: 0;
+            padding: 0;
+            width: min-content;
+         }
+      }
+
+      button[type="submit"] {
+         width: 100%;
+         margin-left: auto;
+         padding: 10px;
+         background: #ff6000;
+         outline: none;
+         border: none;
+         color: white;
+         border-radius: 5px;
+      }
+
+      .validationError {
+         color: red;
+      }
+   }
+}
